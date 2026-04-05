@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: dim_date
+    description: Date dimension. One row per date.
+    columns:
+      - name: datekey
+        description: Surrogate key for the date in YYYYMMDD format
+        tests:
+          - not_null
+          - unique
+      - name: date
+        description: The actual date value
+      - name: year
+        description: The year of the date
+      - name: month
+        description: The month number of the date
+      - name: monthname
+        description: The month name of the date
+      - name: quarter
+        description: The quarter of the date
+      - name: dayofweek
+        description: The day of the week number
+      - name: dayofweekname
+        description: The day of the week name
+
+        
+
+        

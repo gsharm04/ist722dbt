@@ -1,0 +1,48 @@
+version: 2
+models:
+  - name: fact_order_fulfillment
+    description: Accumulating Snapshot. One row per order, products are rolled up into order. Use to track fulfillment of the order itself.
+    columns:
+      - name: orderid
+        description: Source key used for drill through
+        tests:
+          - not_null
+          - unique
+      - name: customerkey
+        description: Dimension FK for dim_customer
+      - name: employeekey
+        description: Dimension FK for dim_employee
+      - name: orderdatekey
+        description: Dimension FK for dim_date
+      - name: requiredatekey
+        description: Dimension FK for dim_date
+      - name: shippeddatekey
+        description: Dimension FK for dim_date
+      - name: freight
+        description: Cost of shipping the order
+      - name: quantity
+        description: Total number of products on the order
+      - name: totalorderamount
+        description: Total amount of order less any discounts
+      - name: daysfromordertoshipped
+        description: Number of days from order to shipped
+      - name: daysfromordertorequired
+        description: Number of days from order to required
+      - name: shippedtorequireddelta
+        description: Difference in days between shipped and required. Positive means late.
+      - name: shippedontime
+        description: Y or N - was the order shipped before required date
+      - name: shippercompanyname
+        description: Degenerate dimension for company that shipped order
+      - name: shipname
+        description: Company name receiving shipment (degenerate dimension)
+      - name: shipaddress
+        description: Address of shipment (degenerate dimension)
+      - name: shipcity
+        description: City of shipment (degenerate dimension)
+      - name: shipregion
+        description: Region/state of shipment (degenerate dimension)
+      - name: shipcountry
+        description: Country of shipment (degenerate dimension)
+
+        

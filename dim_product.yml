@@ -1,0 +1,27 @@
+version: 2
+models:
+  - name: dim_product
+    description: One row per product.
+    columns:
+      - name: productkey
+        description: Dimension key (surrogate key)
+        tests:
+          - not_null
+          - unique
+      - name: productid
+        description: Primary key of the source system (business key)
+        tests:
+          - not_null
+          - unique
+      - name: productname
+        description: The name of the product
+      - name: categoryname
+        description: Product category name
+        tests:
+          - not_null
+      - name: categorydescription
+        description: Product category description
+        tests:
+          - not_null
+
+          

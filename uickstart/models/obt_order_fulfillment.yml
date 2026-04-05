@@ -1,0 +1,6 @@
+version: 2
+models:
+  - name: obt_order_fulfillment
+    description: The order fulfillment fact table combined with all dimensions into one big table. Accumulating snapshot with one row per order, products rolled up into order.
+
+    
